@@ -16,10 +16,13 @@ function checkPalindrome(str) {
     checkFail.style = "display: none";
 
     // Remove all characters that aren't letters and digits
-    str = inputText.value.toLowerCase().match(/[A-Za-z А-Яа-я 0-9]/gi).join("");
+    str = inputText.value.toLowerCase().split(" ").join("").match(/[A-Za-z А-Яа-я0-9]/gi).join("");
+
+   console.log(str);
 
     // Reverse the string and check if it's a palindrome
     let reversedStr = str.split("").reverse().join("");
+    
 
     str === reversedStr ? checkSuccess.style = "display: block" : checkFail.style = "display: block";
 
